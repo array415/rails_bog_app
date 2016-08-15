@@ -9,9 +9,10 @@ class CreaturesController < ApplicationController
   end
 
   def create
-    creature_params = params.require(:creature).permit(:name, :description)
+    creature_params = params.require(:creature).permit(:name, :description, :image)
     @creature = Creature.new(creature_params)
-    return redirect_to creature_path if @creature.save
+    return redirect_to creature_path(@creature) if @creature.save
+    render "new"
   end
 
   def show

@@ -4,6 +4,7 @@
   <p>
     <strong>Name:</strong> <%= f.name %>
     <strong>Description:</strong> <%= f.description %>
+    <%= link_to "Show", creature_path(f.id)%>
   </p>
 
   <% end %>
